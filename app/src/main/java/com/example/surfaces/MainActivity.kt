@@ -12,11 +12,13 @@ import com.example.surfaces.helpers.ContextHelper
 import com.example.surfaces.helpers.OpenGLScene
 import com.example.surfaces.helpers.PermissionHelper
 import com.example.surfaces.machines.*
+import com.example.surfaces.utils.AutoFitSurfaceView
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var recordBtn: TextView
-    private lateinit var glSurfaceView: GLSurfaceView
+    private lateinit var glSurfaceView: AutoFitSurfaceView
+//    private lateinit var glSurfaceView: GLSurfaceView
 
     private val glSurfaceMachine = GLSurfaceMachine()
     private val cameraMachine = CameraMachine()
@@ -33,6 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         val width = ContextHelper.getDisplayWidth()
         glSurfaceView.layoutParams.width = width
+//        glSurfaceView.layoutParams.height = ContextHelper.getDisplayHeight()
         glSurfaceView.layoutParams.height = (OpenGLScene.ASPECT_RATIO * width).toInt()
 
         glSurfaceMachine.send(

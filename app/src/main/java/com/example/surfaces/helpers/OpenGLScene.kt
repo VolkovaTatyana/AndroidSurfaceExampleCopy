@@ -59,17 +59,17 @@ class OpenGLScene(
     )
 
     val smallTexture = OpenGLExternalTexture(
-        textureWidth = (0.25f * sceneWidth).toInt(),
-        textureHeight = (0.25f * sceneHeight).toInt(),
+        textureWidth = (sceneWidth).toInt(),
+        textureHeight = (sceneHeight).toInt(),
         verticesData = floatArrayOf(
-           // X,   Y,      Z,     U,  V
-             0.3f,   0.3f,  0.0f,  0f, 0f,
-             0.8f,   0.3f,  0.0f,  1f, 0f,
-             0.3f,   0.8f,  0.0f,  0f, 1f,
-             0.8f,   0.8f,  0.0f,  1f, 1f
+            // X,   Y,      Z,     U,  V
+            -1.0f,  -1.0f,  0.0f,  1f, 0f,
+            1.0f,  -1.0f,  0.0f,  0f, 0f,
+            -1.0f,   1.0f,  0.0f,  1f, 1f,
+            1.0f,   1.0f,  0.0f,  0f, 1f
         ),
         externalTextureId = smallTextureId,
-        rotate = Surface.ROTATION_0
+        rotate = Surface.ROTATION_180
     )
 
     init {

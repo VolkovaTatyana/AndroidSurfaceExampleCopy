@@ -9,6 +9,7 @@ object ContextHelper {
     lateinit var appContext: Context
 
     fun getDisplayWidth() = getDisplay().x
+//    fun getDisplayHeight() = getDisplay().y
 
     private fun getDisplay(): Point {
         val wm = appContext.getSystemService(Context.WINDOW_SERVICE) as WindowManager

@@ -6,7 +6,12 @@
              android:background="@android:color/holo_blue_dark"
              android:orientation="vertical">
 
-    <android.opengl.GLSurfaceView
+<!--    <android.opengl.GLSurfaceView
+            android:id="@+id/gl_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>-->
+
+    <com.example.surfaces.utils.AutoFitSurfaceView
             android:id="@+id/gl_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

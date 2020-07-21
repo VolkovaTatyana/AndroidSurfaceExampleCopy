@@ -5,6 +5,7 @@ import android.opengl.GLSurfaceView
 import com.example.surfaces.helpers.OpenGLScene
 import com.example.surfaces.machines.GLSurfaceAction.*
 import com.example.surfaces.machines.GLSurfaceState.*
+import com.example.surfaces.utils.AutoFitSurfaceView
 import com.example.surfaces.utils.SimpleProducer
 import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10
@@ -28,6 +29,10 @@ class GLSurfaceMachine: StateMachine<GLSurfaceState, GLSurfaceAction> {
             )
         }
     }
+
+//    override fun send(action: GLSurfaceAction) {
+//        transition(action)
+//    }
 
     override fun send(action: GLSurfaceAction) {
         transition(action)
@@ -81,6 +86,7 @@ class GLSurfaceMachine: StateMachine<GLSurfaceState, GLSurfaceAction> {
         state: WaitingCreate,
         action: Create
     ): UIHolder {
+        action.glSurfaceView.setEGLContextClientVersion(2)
         action.glSurfaceView.setEGLContextClientVersion(2)
 
         return state.uiHolder.copy(
@@ -162,7 +168,8 @@ class GLSurfaceMachine: StateMachine<GLSurfaceState, GLSurfaceAction> {
 
 sealed class GLSurfaceAction : Action {
     class Create(
-        val glSurfaceView: GLSurfaceView,
+//        val glSurfaceView: GLSurfaceView,
+        val glSurfaceView: AutoFitSurfaceView,
         val drawable: Drawable,
         val encoderDrawingCaller: EncoderDrawingCaller
     ) : GLSurfaceAction()
