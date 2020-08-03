@@ -32,11 +32,11 @@ class MainActivity : AppCompatActivity() {
 
         recordBtn = findViewById(R.id.record_btn)
         glSurfaceView = findViewById(R.id.gl_view)
-
-        val width = ContextHelper.getDisplayWidth()
-        glSurfaceView.layoutParams.width = width
-//        glSurfaceView.layoutParams.height = ContextHelper.getDisplayHeight()
-        glSurfaceView.layoutParams.height = (OpenGLScene.ASPECT_RATIO * width).toInt()
+//
+//        val width = ContextHelper.getDisplayWidth()
+//        glSurfaceView.layoutParams.width = width
+////        glSurfaceView.layoutParams.height = ContextHelper.getDisplayHeight()
+//        glSurfaceView.layoutParams.height = (OpenGLScene.ASPECT_RATIO * width).toInt()
 
         glSurfaceMachine.send(
             GLSurfaceAction.Create(

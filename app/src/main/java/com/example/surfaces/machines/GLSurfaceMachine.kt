@@ -30,10 +30,6 @@ class GLSurfaceMachine: StateMachine<GLSurfaceState, GLSurfaceAction> {
         }
     }
 
-//    override fun send(action: GLSurfaceAction) {
-//        transition(action)
-//    }
-
     override fun send(action: GLSurfaceAction) {
         transition(action)
     }
